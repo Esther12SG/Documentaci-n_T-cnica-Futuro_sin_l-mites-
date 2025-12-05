@@ -6,6 +6,12 @@ Plataforma Web de Orientación Vocacional Tecnológica para Comunidades Rurales 
 
 DEFINICIÓN DEL PROBLEMA Y SOLUCIÓN
 
+
+
+
+
+
+
    
 2. El Problema:
 
@@ -27,6 +33,8 @@ A partir de experiencias personales y observaciones reales durante actividades d
 Además, el MINEDUC ha trabajado planes para fortalecer capacidades digitales, pero aún no existe una herramienta interactiva, gratuita y accesible que motive vocaciones tecnológicas desde la escuela.
 
 Este proyecto surge como una respuesta directa a esa brecha.
+
+
 
 
 
@@ -62,6 +70,11 @@ El enfoque central es romper las barreras geográficas, económicas y educativas
 
 
 
+
+
+
+
+
 4. Justificación
 
 
@@ -88,9 +101,13 @@ Su valor no es solo académico, sino humano y estratégico para Guatemala.
 
 
 
+
+
+
+
 5. Propuesta Técnica (Arquitectura)
 
-1. Frontend
+ 1. Frontend
 
 Para el desarrollo del frontend se consideraron tres tecnologías: React, Vue y Angular.
 
@@ -122,6 +139,10 @@ Diagrama
 
 
 <img width="1333" height="800" alt="Diagrama sin título drawio (7)" src="https://github.com/user-attachments/assets/78674fb5-039e-4db7-8b57-f0acaaa9d3c8" />
+
+
+
+
 
 
 
@@ -201,6 +222,10 @@ Tipo: JSON
 
 
 <img width="537" height="424" alt="image" src="https://github.com/user-attachments/assets/10aac6e5-6110-4db3-b37b-a9e92557307b" />
+
+
+
+
 
 
 
@@ -305,6 +330,10 @@ CREATE TABLE progreso_usuario (
 
 
 
+
+
+
+
 8. Capturas
 
 
@@ -330,6 +359,9 @@ CREATE TABLE progreso_usuario (
 
 
 <img width="982" height="579" alt="image" src="https://github.com/user-attachments/assets/4e826146-f83e-435f-b09f-dde7740aab37" />
+
+
+
 
 
 
