@@ -107,7 +107,7 @@ Su valor no es solo académico, sino humano y estratégico para Guatemala.
 
 5. Propuesta Técnica (Arquitectura)
 
- 1. Frontend
+1.Frontend
 
 Para el desarrollo del frontend se consideraron tres tecnologías: React, Vue y Angular.
 
