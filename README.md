@@ -1,5 +1,7 @@
 Documento Técnico
+
 FUTURO SIN LÍMITES
+
 Plataforma Web de Orientación Vocacional Tecnológica para Comunidades Rurales e Instituciones Educativas
 
 DEFINICIÓN DEL PROBLEMA Y SOLUCIÓN
@@ -9,13 +11,21 @@ El Problema:
 
 
 En Guatemala, especialmente en aldeas y comunidades rurales, los estudiantes carecen de acceso a información, formación básica y orientación vocacional sobre las profesiones más demandadas a nivel mundial:
+
 Tecnología, Programación, Diseño Gráfico, Arquitectura, entre otras.
+
 A partir de experiencias personales y observaciones reales durante actividades de voluntariado educativo, se detecta que:
+
 •	Muchos centros educativos rurales no incluyen orientación en carreras tecnológicas o creativas.
+
 •	Se minimiza o ignora la importancia de las áreas tecnológicas y creativas que dominan el mercado laboral actual.
+
 •	Como resultado, los estudiantes no descubren vocaciones modernas, no acceden a oportunidades educativas y se limita el desarrollo profesional local.
+
 •	Las comunidades quedan rezagadas al no generar especialistas que impulsen crecimiento, innovación y competitividad.
+
 Además, el MINEDUC ha trabajado planes para fortalecer capacidades digitales, pero aún no existe una herramienta interactiva, gratuita y accesible que motive vocaciones tecnológicas desde la escuela.
+
 Este proyecto surge como una respuesta directa a esa brecha.
 
 
@@ -27,35 +37,52 @@ La Solución
 
 
 Futuro Sin Límites es una plataforma web gratuita diseñada para:
+
 •	Inspirar y orientar vocacionalmente a estudiantes de educación básica y diversificado.
+
 •	Integrarse dentro del aula como apoyo didáctico para docentes.
+
 •	Servir como herramienta piloto para MINEDUC, facilitando la ampliación de orientación tecnológica en zonas rurales.
+
 El sitio ofrece:
+
 •	Información clara sobre áreas profesionales tecnológicas y creativas
+
 •	Mini-juegos y experiencias interactivas para despertar interés
+
 •	 Contenido introductorio sobre programación, diseño, arquitectura, IA
+
 •	 Listado de universidades, becas y oportunidades educativas
+
 •	 Recursos básicos para que los docentes integren la plataforma en clase
+
 •	Progreso y marcadores para estudiantes registrados
+
 El enfoque central es romper las barreras geográficas, económicas y educativas, democratizando el acceso a vocaciones modernas.
 
 Justificación
 
 
 La plataforma aporta valor social, educativo y tecnológico porque:
+
 Contenido amigable e interactivo:
+
 No solo da texto y teoría, sino juegos y dinámicas simples que hacen que el estudiante experimente y se interese.
 Conexión con el mundo real:
+
 No se queda solo en “qué es programar” o “qué es diseño gráfico”, sino que conecta con universidades, cursos y oportunidades concretas.
 Cuenta con Enfoque en comunidades rurales y aldeas:
 
 •	No es una plataforma genérica; está pensada desde la realidad de estudiantes que, como yo, vienen de aldeas donde estas áreas casi no se mencionan.
+
 •	Transforma vocaciones en comunidades que históricamente no han accedido a formación tecnológica.
+
 •	Conecta educación con oportunidades reales: universidades, becas, carreras y cursos.
+
 •	Promueve el desarrollo local, generando talento profesional en disciplinas altamente demandadas.
+
 •	Es un posible proyecto escalable por Ministerio de Educación, como herramienta oficial de orientación para institutos del interior del país.
 Su valor no es solo académico, sino humano y estratégico para Guatemala.
-
 
 
 
@@ -90,7 +117,9 @@ Por esta razón se propone utilizar una base de datos relacional SQL, concretame
 Diagrama
 
 
+
 <img width="1333" height="800" alt="Diagrama sin título drawio (7)" src="https://github.com/user-attachments/assets/78674fb5-039e-4db7-8b57-f0acaaa9d3c8" />
+
 
 
 
@@ -108,6 +137,8 @@ Tipo: JSON
 <img width="847" height="569" alt="image" src="https://github.com/user-attachments/assets/2ad8e52e-a7aa-43ad-adc3-7b902cc34982" />
 
 
+
+
 Endpoint 2: Obtener recursos educativos (con filtros)
 •	Método: GET
 •	Ruta: /api/recursos
@@ -123,6 +154,7 @@ Tipo: JSON
 
 
 
+
 <img width="807" height="706" alt="image" src="https://github.com/user-attachments/assets/e1ad66cd-0bdc-4f7d-9468-3ff40ac8e8cf" />}
 
 
@@ -134,7 +166,11 @@ Endpoint 3: Registro de usuario
 Cuerpo de la petición (Request Body – JSON):
 
 
+
+
 <img width="609" height="405" alt="image" src="https://github.com/user-attachments/assets/4faaba58-b383-486d-8f65-0759552d1bd7" />
+
+
 
 
 Respuesta Exitosa (201 Created)
@@ -145,10 +181,12 @@ Tipo: JSON
 
 
 
+
 Archivo SQL(modelo de datos)
 
 
 CREATE TABLE usuarios (
+
     id_usuario       SERIAL PRIMARY KEY,
     nombre           VARCHAR(100)        NOT NULL,
     correo           VARCHAR(150)        NOT NULL UNIQUE,
@@ -161,6 +199,7 @@ CREATE TABLE usuarios (
 
 
 CREATE TABLE areas_profesionales (
+
     id_area       SERIAL PRIMARY KEY,
     nombre_area   VARCHAR(100)   NOT NULL,
     descripcion   TEXT,
@@ -168,6 +207,7 @@ CREATE TABLE areas_profesionales (
 );
 
 CREATE TABLE recursos (
+
     id_recurso   SERIAL PRIMARY KEY,
     titulo       VARCHAR(150)   NOT NULL,
     descripcion  TEXT,
@@ -186,6 +226,7 @@ CREATE TABLE recursos (
 
 
 CREATE TABLE universidades (
+
     id_universidad  SERIAL PRIMARY KEY,
     nombre          VARCHAR(150)   NOT NULL,
     departamento    VARCHAR(100),          -- departamento o región
@@ -195,6 +236,7 @@ CREATE TABLE universidades (
 
 
 CREATE TABLE ofertas_formativas (
+
     id_oferta        SERIAL PRIMARY KEY,
     id_universidad   INTEGER      NOT NULL,
     id_area          INTEGER      NOT NULL,
@@ -217,6 +259,7 @@ CREATE TABLE ofertas_formativas (
 
 
 CREATE TABLE progreso_usuario (
+
     id_progreso            SERIAL PRIMARY KEY,
     id_usuario             INTEGER      NOT NULL,
     id_recurso             INTEGER      NOT NULL,
