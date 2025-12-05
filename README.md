@@ -1,4 +1,4 @@
-Documento Técnico
+1. Documento Técnico
 
 FUTURO SIN LÍMITES
 
@@ -7,7 +7,7 @@ Plataforma Web de Orientación Vocacional Tecnológica para Comunidades Rurales 
 DEFINICIÓN DEL PROBLEMA Y SOLUCIÓN
 
    
-El Problema:
+2. El Problema:
 
 
 En Guatemala, especialmente en aldeas y comunidades rurales, los estudiantes carecen de acceso a información, formación básica y orientación vocacional sobre las profesiones más demandadas a nivel mundial:
@@ -33,7 +33,7 @@ Este proyecto surge como una respuesta directa a esa brecha.
 
 
 
-La Solución
+3. La Solución
 
 
 Futuro Sin Límites es una plataforma web gratuita diseñada para:
@@ -60,7 +60,9 @@ El sitio ofrece:
 
 El enfoque central es romper las barreras geográficas, económicas y educativas, democratizando el acceso a vocaciones modernas.
 
-Justificación
+
+
+4. Justificación
 
 
 La plataforma aporta valor social, educativo y tecnológico porque:
@@ -86,7 +88,7 @@ Su valor no es solo académico, sino humano y estratégico para Guatemala.
 
 
 
-Propuesta Técnica (Arquitectura)
+5. Propuesta Técnica (Arquitectura)
 
 1. Frontend
 
@@ -101,13 +103,14 @@ Para el desarrollo del frontend se consideraron tres tecnologías: React, Vue y 
 Elección: se propone utilizar React junto con Next.js como base del frontend, porque permite crear una SPA con buena experiencia de usuario, soporta renderizado del lado del servidor y se integra fácilmente con el despliegue en la nube.
 
 
-Backend y Publicación
+2. Backend y Publicación
 
 Para el backend se propone utilizar Node.js, aprovechando el mismo entorno de Next.js para definir endpoints tipo REST que atiendan las operaciones principales del sistema (gestión de usuarios, áreas profesionales, recursos, progreso y ofertas formativas). Esto permite mantener frontend y backend en un solo proyecto y reducir la complejidad del despliegue.
 
 La aplicación completa (frontend + backend) se publicará en Vercel, que está orientado a proyectos construidos con Next.js y facilita el despliegue continuo a partir del repositorio de GitHub. De esta forma, cualquier actualización del código se puede reflejar rápidamente en el entorno en línea que usarán los estudiantes y docentes.
 
-Persistencia de Datos
+
+3. Persistencia de Datos
 
 Elección entre SQL y NoSQL
 
@@ -123,13 +126,18 @@ Diagrama
 
 
 
-Diseño de Interfaz de Programación (API) 
+6. Diseño de Interfaz de Programación (API) 
 
 Endpoint 1: Obtener lista de áreas profesionales
+
 •	Método: GET
+
 •	Ruta: /api/areas
+
 •	Descripción: Retorna el listado de áreas profesionales disponibles en la plataforma (programación, diseño gráfico, arquitectura, etc.).
+
 Respuesta Exitosa (200 OK)
+
 Tipo: JSON
 
 
@@ -140,16 +148,26 @@ Tipo: JSON
 
 
 Endpoint 2: Obtener recursos educativos (con filtros)
+
 •	Método: GET
+
 •	Ruta: /api/recursos
+
 •	Descripción: Retorna la lista de recursos educativos (videos, artículos, juegos) con filtros opcionales por área, tipo y nivel.
 Parámetros de consulta (query params) opcionales:
+
 •	id_area → filtra por área profesional (ej. 1 = Programación).
+
 •	tipo → filtra por tipo de recurso (video, articulo, juego).
+
 •	nivel → filtra por nivel (principiante, intermedio, etc.).
+
 Ejemplo de llamada:
+
 GET /api/recursos?id_area=1&tipo=video&nivel=principiante
+
 Respuesta Exitosa (200 OK)
+
 Tipo: JSON
 
 
@@ -160,9 +178,13 @@ Tipo: JSON
 
 
 Endpoint 3: Registro de usuario
+
 •	Método: POST
+
 •	Ruta: /api/registro
+
 •	Descripción: Registra un nuevo usuario en la plataforma a partir de los datos enviados desde el formulario (nombre, correo, contraseña, etc.).
+
 Cuerpo de la petición (Request Body – JSON):
 
 
@@ -174,6 +196,7 @@ Cuerpo de la petición (Request Body – JSON):
 
 
 Respuesta Exitosa (201 Created)
+
 Tipo: JSON
 
 
@@ -182,7 +205,7 @@ Tipo: JSON
 
 
 
-Archivo SQL(modelo de datos)
+7. Archivo SQL(modelo de datos)
 
 
 CREATE TABLE usuarios (
@@ -282,7 +305,7 @@ CREATE TABLE progreso_usuario (
 
 
 
-Capturas
+8. Capturas
 
 
 <img width="1002" height="595" alt="image" src="https://github.com/user-attachments/assets/02a5b738-6a20-4b10-8b63-4b53b441d1d9" />
@@ -310,7 +333,7 @@ Capturas
 
 
 
-Enlace de protototipo:
+9. Enlace de protototipo:
 https://prototipo-fututo-sin-limites.vercel.app/
 
 
