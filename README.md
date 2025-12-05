@@ -226,11 +226,38 @@ Tipo: JSON
 
 
 
+7. Planificación y Costos
+   
+Desglose de tareas principales con horas estimadas hasta alcanzar 450
+
+
+
+<img width="387" height="379" alt="image" src="https://github.com/user-attachments/assets/d3f12fe7-1946-4fab-a326-1d4bb9914b33" />
 
 
 
 
-7. Archivo SQL(modelo de datos)
+Total, de Horas:
+450 horas
+
+Presupuesto:
+Costo Hora:
+$35 USD
+
+
+
+Cálculo del costo total:
+450 horas × $35 = $15,750 USD
+
+
+
+<img width="392" height="60" alt="image" src="https://github.com/user-attachments/assets/b953069f-e2da-4cd6-8cb2-254b41f94811" />
+
+
+
+
+
+8.  Archivo SQL(modelo de datos)
 
 
 CREATE TABLE usuarios (
@@ -334,7 +361,7 @@ CREATE TABLE progreso_usuario (
 
 
 
-8. Capturas
+9. Capturas
 
 
 <img width="1002" height="595" alt="image" src="https://github.com/user-attachments/assets/02a5b738-6a20-4b10-8b63-4b53b441d1d9" />
