@@ -16,7 +16,7 @@ DEFINICIÓN DEL PROBLEMA Y SOLUCIÓN
 2. El Problema:
 
 
-En Guatemala, especialmente en aldeas y comunidades rurales, los estudiantes carecen de acceso a información, formación básica y orientación vocacional sobre las profesiones más demandadas a nivel mundial:
+En Guatemala, especialmente en aldeas y comunidades rurales, los estudiantes carecen de acceso a información, formación básica y orientación vocacional sobre las profesiones más Predomeninantes hoy en dia en la sociedad como por ejemplo:
 
 Tecnología, Programación, Diseño Gráfico, Arquitectura, entre otras.
 
@@ -46,23 +46,21 @@ Este proyecto surge como una respuesta directa a esa brecha.
 
 Futuro Sin Límites es una plataforma web gratuita diseñada para:
 
-•	Inspirar y orientar vocacionalmente a estudiantes de educación básica y diversificado.
+•	Inspirar y orientar vocacionalmente a estudiantes de educación básica, diversificado y porque no verlo implementado tambien en educación primaria.
 
-•	Integrarse dentro del aula como apoyo didáctico para docentes.
+•	Integrarse dentro del aula como apoyo didáctico para docentes pero sobre todo, hacerla parte del alumnado que ellos tengan acceso total a ella.
 
 •	Servir como herramienta piloto para MINEDUC, facilitando la ampliación de orientación tecnológica en zonas rurales.
 
 El sitio ofrece:
 
-•	Información clara sobre áreas profesionales tecnológicas y creativas
+•	Información clara sobre áreas profesiones tecnológicas y creativas
 
 •	Mini-juegos y experiencias interactivas para despertar interés
 
 •	 Contenido introductorio sobre programación, diseño, arquitectura, IA
 
 •	 Listado de universidades, becas y oportunidades educativas
-
-•	 Recursos básicos para que los docentes integren la plataforma en clase
 
 •	Progreso y marcadores para estudiantes registrados
 
