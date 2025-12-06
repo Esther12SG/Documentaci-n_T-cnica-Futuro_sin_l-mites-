@@ -46,7 +46,7 @@ Este proyecto surge como una respuesta directa a esa brecha.
 
 Futuro Sin Límites es una plataforma web gratuita diseñada para:
 
-•	Inspirar y orientar vocacionalmente a estudiantes de educación básica, diversificado y porque no verlo implementado tambien en educación primaria.
+•	Inspirar y orientar vocacionalmente a estudiantes de educación básica y diversificado.
 
 •	Integrarse dentro del aula como apoyo didáctico para docentes pero sobre todo, hacerla parte del alumnado que ellos tengan acceso total a ella.
 
@@ -136,7 +136,8 @@ Diagrama
 
 
 
-<img width="1333" height="800" alt="Diagrama sin título drawio (7)" src="https://github.com/user-attachments/assets/78674fb5-039e-4db7-8b57-f0acaaa9d3c8" />
+<img width="723" height="1088" alt="diagrama pgerd" src="https://github.com/user-attachments/assets/c034a60f-7b81-4a54-918c-373920de5916" />
+
 
 
 
@@ -258,100 +259,88 @@ Cálculo del costo total:
 8.  Archivo SQL(modelo de datos)
 
 
+-- Tabla de usuarios
 CREATE TABLE usuarios (
 
     id_usuario       SERIAL PRIMARY KEY,
     nombre           VARCHAR(100)        NOT NULL,
     correo           VARCHAR(150)        NOT NULL UNIQUE,
     contrasena       VARCHAR(255)        NOT NULL,
-    rol              VARCHAR(50)         NOT NULL,      -- estudiante, docente, admin, etc.
-    comunidad        VARCHAR(100),                      -- aldea / comunidad
-    grado_escolar    VARCHAR(50),                       -- primaria, básico, diversificado, etc.
+    rol              VARCHAR(50)         NOT NULL,
+    comunidad        VARCHAR(100),
+    grado_escolar    VARCHAR(50),
     fecha_registro   TIMESTAMP           NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-
+-- Tabla de áreas profesionales
 CREATE TABLE areas_profesionales (
 
     id_area       SERIAL PRIMARY KEY,
     nombre_area   VARCHAR(100)   NOT NULL,
     descripcion   TEXT,
-    icono         VARCHAR(100)   -- nombre de icono o ruta
+    icono         VARCHAR(100)
 );
 
+-- Tabla de recursos
 CREATE TABLE recursos (
 
     id_recurso   SERIAL PRIMARY KEY,
     titulo       VARCHAR(150)   NOT NULL,
     descripcion  TEXT,
-    tipo         VARCHAR(50),              -- video, juego, lectura, quiz, etc.
-    url_recurso  TEXT,                     -- enlace al recurso (YouTube, juego, etc.)
-    nivel        VARCHAR(20),              -- inicial, intermedio, avanzado
+    tipo         VARCHAR(50),
+    url_recurso  TEXT,
+    nivel        VARCHAR(20),
     id_area      INTEGER       NOT NULL,
     es_juego     BOOLEAN       NOT NULL DEFAULT FALSE,
-
     CONSTRAINT fk_recursos_area
         FOREIGN KEY (id_area)
         REFERENCES areas_profesionales (id_area)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
 );
 
-
+-- Tabla de universidades
 CREATE TABLE universidades (
 
     id_universidad  SERIAL PRIMARY KEY,
     nombre          VARCHAR(150)   NOT NULL,
-    departamento    VARCHAR(100),          -- departamento o región
+    departamento    VARCHAR(100),
     sitio_web       TEXT,
-    contacto        VARCHAR(100)           -- correo / teléfono de contacto
+    contacto        VARCHAR(100)
 );
 
-
+-- Tabla de ofertas formativas
 CREATE TABLE ofertas_formativas (
 
     id_oferta        SERIAL PRIMARY KEY,
     id_universidad   INTEGER      NOT NULL,
     id_area          INTEGER      NOT NULL,
-    nombre_programa  VARCHAR(150) NOT NULL, -- nombre de la carrera/curso
-    tipo             VARCHAR(50),           -- carrera, tecnicatura, curso corto, etc.
-    duracion         VARCHAR(50),           -- 3 años, 6 meses, etc.
-
+    nombre_programa  VARCHAR(150) NOT NULL,
+    tipo             VARCHAR(50),
+    duracion         VARCHAR(50),
     CONSTRAINT fk_oferta_universidad
         FOREIGN KEY (id_universidad)
-        REFERENCES universidades (id_universidad)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-
+        REFERENCES universidades (id_universidad),
     CONSTRAINT fk_oferta_area
         FOREIGN KEY (id_area)
         REFERENCES areas_profesionales (id_area)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
 );
 
-
+-- Tabla de progreso de usuario
 CREATE TABLE progreso_usuario (
 
     id_progreso            SERIAL PRIMARY KEY,
     id_usuario             INTEGER      NOT NULL,
     id_recurso             INTEGER      NOT NULL,
-    estado                 VARCHAR(20),        -- en_progreso, completado, pendiente
-    puntuacion             INTEGER,            -- puntaje obtenido
+    estado                 VARCHAR(20),
+    puntuacion             INTEGER,
     fecha_ultima_actividad TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
     CONSTRAINT fk_progreso_usuario
         FOREIGN KEY (id_usuario)
-        REFERENCES usuarios (id_usuario)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE,
-
+        REFERENCES usuarios (id_usuario),
     CONSTRAINT fk_progreso_recurso
         FOREIGN KEY (id_recurso)
         REFERENCES recursos (id_recurso)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE
 );
+
 
 
 
