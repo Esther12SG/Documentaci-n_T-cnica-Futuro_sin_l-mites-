@@ -1,4 +1,4 @@
-1. Documento Técnico
+Documento Técnico
 
 FUTURO SIN LÍMITES
 
@@ -13,7 +13,7 @@ DEFINICIÓN DEL PROBLEMA Y SOLUCIÓN
 
 
    
-2. El Problema:
+1. Problema:
 
 
 En Guatemala, especialmente en aldeas y comunidades rurales, los estudiantes carecen de acceso a información, formación básica y orientación vocacional sobre las profesiones más Predomeninantes hoy en dia en la sociedad como por ejemplo:
@@ -41,7 +41,7 @@ Este proyecto surge como una respuesta directa a esa brecha.
 
 
 
-3. La Solución
+2.  La Solución
 
 
 Futuro Sin Límites es una plataforma web gratuita diseñada para:
@@ -73,7 +73,7 @@ El enfoque central es romper las barreras geográficas, económicas y educativas
 
 
 
-4. Justificación
+3.  Justificación
 
 
 La plataforma aporta valor social, educativo y tecnológico porque:
@@ -103,7 +103,7 @@ Su valor no es solo académico, sino humano y estratégico para Guatemala.
 
 
 
-5. Propuesta Técnica (Arquitectura)
+4.  Propuesta Técnica (Arquitectura)
 
 1.Frontend
 
@@ -125,7 +125,8 @@ Para el backend se propone utilizar Node.js, aprovechando el mismo entorno de Ne
 La aplicación completa (frontend + backend) se publicará en Vercel, que está orientado a proyectos construidos con Next.js y facilita el despliegue continuo a partir del repositorio de GitHub. De esta forma, cualquier actualización del código se puede reflejar rápidamente en el entorno en línea que usarán los estudiantes y docentes.
 
 
-3. Persistencia de Datos
+
+5. Persistencia de Datos
 
 Elección entre SQL y NoSQL
 
